@@ -9,7 +9,8 @@ namespace Game.Battle.Controllers
         private EcsEntity entity;
 
         public IUnitMoveController UnitMoveController => moveController;
-        
+        public MonoBehaviour MonoBehaviour => this;
+
         private void Awake()
         {
             moveController = GetComponent<IUnitMoveController>();
@@ -31,6 +32,7 @@ namespace Game.Battle.Controllers
     public interface IUnitController
     {
         IUnitMoveController UnitMoveController { get; }
+        MonoBehaviour MonoBehaviour { get; }
         void InjectActivation(EcsEntity entity);
         void Disable();
     }

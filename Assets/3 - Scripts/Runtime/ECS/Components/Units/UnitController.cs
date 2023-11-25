@@ -1,7 +1,7 @@
 ﻿using Game.Battle.Controllers;
 using Leopotam.Ecs;
 
-namespace Game.Components.Units
+namespace Game.Ecs.Components
 {
     public struct UnitController : IEcsAutoReset<UnitController>
     {

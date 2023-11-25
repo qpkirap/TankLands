@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b3c86858494c67a3c54db662491302, type: 3}
+  m_Name: Maps Config
+  m_EditorClassIdentifier: 
+  id: 
+  title: "\u041A\u0430\u0440\u0442\u044B"
+  mapDatas:
+  - id: 0
+    enemys:
+    - 5400b152ae99f6f42a35c72b4c6b0063
+    - 9385233e806fe9340ba4db1083fb81d0
+    - 0c7abefbbf41895478afed2fe0cd3294
+    - f55316179f9fb4447b016071c2a57df0
+    - cc7814015655be24a825f7a975ce7c0f
+    player: b57b920e18c382140aef305064115a26

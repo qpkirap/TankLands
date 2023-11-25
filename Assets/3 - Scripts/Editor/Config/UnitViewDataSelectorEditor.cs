@@ -10,10 +10,18 @@ namespace Game.Configs
     {
         private UnitsViewConfig unitsViewConfig;
         private SerializedProperty viewDataProperty;
+        private SerializedProperty idProperty;
+        private SerializedProperty indexProperty;
+
         private int selectedViewDataIndex = 0;
         
         private void OnEnable()
         {
+            idProperty = serializedObject.FindProperty("id");
+            indexProperty = serializedObject.FindProperty(UnitData.IndexViewKey);
+
+            selectedViewDataIndex = indexProperty.intValue;
+            
             var guid = AssetDatabase.FindAssets("Unit View Config");
             
             if (guid.Length > 0 && unitsViewConfig == null)
@@ -33,6 +41,10 @@ namespace Game.Configs
         
         public override void OnInspectorGUI()
         {
+            EditorGUILayout.LabelField("Id", EditorStyles.boldLabel);
+
+            EditorGUILayout.TextField(idProperty.stringValue);
+            
             base.OnInspectorGUI();
 
             if (unitsViewConfig == null)
@@ -51,6 +63,8 @@ namespace Game.Configs
             }
 
             selectedViewDataIndex = EditorGUILayout.Popup("Select View Data", selectedViewDataIndex, viewDataNames);
+
+            indexProperty.intValue = selectedViewDataIndex;
 
             var selectedViewData = viewDatas[selectedViewDataIndex];
 

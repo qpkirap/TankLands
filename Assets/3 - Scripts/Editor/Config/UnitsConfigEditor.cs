@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Game.Configs
 {
     [CustomEditor(typeof(UnitsConfig))]
-    public class UUnitsConfigEditor : UnityEditor.Editor
+    public class UnitsConfigEditor : UnityEditor.Editor
     {
         private ReorderableList list;
         

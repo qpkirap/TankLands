@@ -8,5 +8,7 @@ namespace Game.Configs
     public class UnitViewData : ScriptableEntity
     {
         [SerializeField] private AssetReference controller;
+
+        public AddressableGameObject Controller => new(controller);
     }
 }

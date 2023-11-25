@@ -1,4 +1,5 @@
-using Game.Components;
+using Game.Ecs;
+using Game.Ecs.Components;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.AI;

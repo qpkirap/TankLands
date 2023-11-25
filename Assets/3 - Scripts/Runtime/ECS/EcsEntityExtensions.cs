@@ -1,6 +1,7 @@
-﻿using Leopotam.Ecs;
+﻿using Game.Ecs.Components;
+using Leopotam.Ecs;
 
-namespace Game.Components
+namespace Game.Ecs
 {
     public static class EcsEntityExtensions
     {
@@ -31,5 +32,21 @@ namespace Game.Components
         {
             return entity.IsExist() && entity.Has<T>();
         }
+        
+        public static EcsEntity CreateEntity(this EcsWorld world, EntityType type = EntityType.Battle)
+        {
+            var entity = world.NewEntity();
+
+            switch (type)
+            {
+                case EntityType.Battle: entity.Get<BattleEntity>(); break;
+            }
+            return entity;
+        }
+    }
+    
+    public enum EntityType
+    {
+        Battle
     }
 }
