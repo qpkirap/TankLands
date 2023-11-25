@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1701278611167708029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ce0d170318544ec8c2b6765de1f1d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 95bdd1186e25978499715e90a18e7d26
+  title: Player
+  controller:
+    m_AssetGUID: dec0fabe95f13094bb6ee731eb1c58ab
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24e50727f2a4826b0f2531475fd843b, type: 3}
+  m_Name: Units View Config
+  m_EditorClassIdentifier: 
+  id: 
+  title: 
+  viewDatas:
+  - {fileID: -1701278611167708029}
