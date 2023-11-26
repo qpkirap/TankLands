@@ -21,7 +21,12 @@ namespace Game.Ecs
             systems
                 .Add(new SpawnPlayerUnitsSystem())
                 .Add(new SpawnUnitsViewSystem())
-                .Add(new CameraFollowViewSystem());
+                .Add(new CameraFollowViewSystem())
+                .Add(new MoveUnitsSystem())
+
+                .Add(new DestroyUnitViewSystem())
+                .Add(new RelatedEntitiesSystem())
+                .Add(new DestroySystem());
             
             AddOneFrameComponents(systems);
             

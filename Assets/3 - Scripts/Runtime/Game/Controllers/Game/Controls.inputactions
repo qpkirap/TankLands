@@ -9,15 +9,42 @@
                     "name": "Target",
                     "type": "Value",
                     "id": "6ed81b5b-01bf-437a-9f88-01ac5e12392b",
-                    "expectedControlType": "Axis",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Move",
+                    "name": "Move Up",
                     "type": "Button",
                     "id": "32016858-dc11-4797-9a21-c47bbbd0833c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move Down",
+                    "type": "Button",
+                    "id": "83ebc860-451c-4359-95ca-5ab0c4403b25",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move Right",
+                    "type": "Button",
+                    "id": "063cb7aa-cf0f-4e5c-ae26-c5e0ba466888",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Move Left",
+                    "type": "Button",
+                    "id": "f8f9bb7f-578a-49e3-b1c8-eaa8bae7b3ce",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -33,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Weapon",
+                    "name": "Weapon Prev",
                     "type": "Button",
                     "id": "3fea5fcd-74b1-4144-8606-2b941d1c47c9",
                     "expectedControlType": "Button",
@@ -42,55 +69,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MouseVelocity",
-                    "type": "Value",
-                    "id": "5f667f9d-2503-4bbf-8a38-e2367ffb60b7",
-                    "expectedControlType": "Vector2",
+                    "name": "Weapon Next",
+                    "type": "Button",
+                    "id": "a7ffcb55-8f0a-44c6-bc8f-d51b427e8cdb",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "a08fe541-0438-4e57-be38-b44813d1f83c",
-                    "path": "<Mouse>/delta/left",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
-                    "processors": "Clamp(max=1)",
-                    "groups": "",
-                    "action": "Target",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6aebf249-aba4-4747-9430-d9c1a2471901",
-                    "path": "<Mouse>/delta/right",
-                    "interactions": "",
-                    "processors": "Clamp(max=1)",
-                    "groups": "",
-                    "action": "Target",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "39b4dfe6-1acf-4228-b98f-2de54c31f680",
-                    "path": "<Mouse>/delta/up",
-                    "interactions": "",
-                    "processors": "Clamp(max=1)",
-                    "groups": "",
-                    "action": "Target",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e7493fd4-93c8-443e-8ef6-040cbfcfda3a",
-                    "path": "<Mouse>/delta/down",
-                    "interactions": "",
-                    "processors": "Clamp(max=1)",
+                    "processors": "",
                     "groups": "",
                     "action": "Target",
                     "isComposite": false,
@@ -101,42 +95,9 @@
                     "id": "cdded10f-577e-4110-a65f-ccdc862737b2",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
-                    "processors": "Clamp(min=1,max=1)",
+                    "processors": "",
                     "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ded751cd-cc80-4816-be04-9c24f64ccf0f",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "Clamp(min=1,max=1)",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bbf33524-b33c-4fd9-9e61-dcd74d098cea",
-                    "path": "<Keyboard>/leftArrow",
-                    "interactions": "",
-                    "processors": "Clamp(min=1,max=1)",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b5f6b6d9-56c9-46c6-85a3-56c4fe7c3b25",
-                    "path": "<Keyboard>/rightArrow",
-                    "interactions": "",
-                    "processors": "Clamp(min=1,max=1)",
-                    "groups": "",
-                    "action": "Move",
+                    "action": "Move Up",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -145,7 +106,7 @@
                     "id": "d571d84b-8e58-4dfe-85ff-e665197481fd",
                     "path": "<Keyboard>/x",
                     "interactions": "",
-                    "processors": "Clamp(min=1,max=1)",
+                    "processors": "",
                     "groups": "",
                     "action": "Fire",
                     "isComposite": false,
@@ -158,29 +119,51 @@
                     "interactions": "",
                     "processors": "Clamp(min=1,max=1)",
                     "groups": "",
-                    "action": "Weapon",
+                    "action": "Weapon Prev",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "11fbb2db-f8a6-4087-9783-cc9796187ed6",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "Clamp(min=1,max=1)",
-                    "groups": "",
-                    "action": "Weapon",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "941c6c1b-bb54-4861-8052-53d58197f972",
-                    "path": "<Mouse>/delta",
+                    "id": "a4486f5f-6a9c-454c-9e17-f04224001719",
+                    "path": "<Keyboard>/downArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MouseVelocity",
+                    "action": "Move Down",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dd943548-234f-4f31-b18e-d1c86e3e8bb0",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fbbef2bc-4fe3-4cef-b313-c2f66bb0b2b6",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f6aa90c1-37fd-4bf1-8850-466dfc338f8f",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Weapon Next",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

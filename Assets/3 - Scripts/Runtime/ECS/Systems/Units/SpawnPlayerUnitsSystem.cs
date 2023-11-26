@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Game.Ecs.Command.Move;
 using Game.Ecs.Components;
 using Leopotam.Ecs;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Game.Ecs.Systems
 
         private EcsWorld world;
         private GameState gameState;
+        
         private LocationController locationController;
         private BattleInfo battleInfo => gameState.BattleInfo;
         
@@ -28,15 +30,30 @@ namespace Game.Ecs.Systems
                     for (int j = startIndex; j < delta; j++)
                     {
                         var playerData = players[startIndex + j];
-                        
-                        var entity = world.NewEntity();
+
+                        var entity = world.CreateEntity();
                         
                         entity.Replace(new PlayerTag());
                         entity.Replace(new UnitData(playerData));
                         entity.Get<Position>().SetValue(locationController.GetPlayerSpawnPosition());
+                        entity.Get<InputData>().Set(gameState.InputState);
+                        entity.Replace(new Move(new PlayerMoveAction()));
+                        entity.Replace(new Skills(CreateSkill(SkillType.Range, entity)));
+                        entity.Replace(new MovementSpeed(playerData.Speed));
                     }
                 }
             }
+        }
+
+        private EcsEntity CreateSkill(SkillType skillType, in EcsEntity invoker)
+        {
+            var skillEntity = world.CreateEntity();
+
+            skillEntity.Replace(new Skill(skillType));
+            
+            invoker.Get<RelatedEntities>().Add(skillEntity);
+            
+            return skillEntity;
         }
     }
 }

@@ -81,6 +81,8 @@ namespace Game
             {
                 if (pools.TryGetValue(unitData.Data.Id, out var pool))
                 {
+                    unitController.Controller.Disable();
+                    
                     pool.Release(unitController.Controller);
                 }
             }

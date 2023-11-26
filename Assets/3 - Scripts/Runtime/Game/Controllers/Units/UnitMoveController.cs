@@ -18,6 +18,9 @@ namespace Game.Battle.Controllers
         private EcsEntity entity;
         private Vector3 targetMove;
 
+        public Vector3 Position => agent.transform.position;
+        public Quaternion Rotation => agent.transform.rotation;
+
         private void Awake()
         {
             transformCache = transform;
@@ -76,6 +79,8 @@ namespace Game.Battle.Controllers
         {
             if (agent != null)
             {
+                Debug.Log($"{this.GetType() }{targetMove}");
+                
                 var nearest = GetNearestNavmesh(targetMove);
                 
                 if (nearest != default)

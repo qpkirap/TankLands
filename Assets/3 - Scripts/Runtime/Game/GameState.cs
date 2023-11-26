@@ -6,6 +6,7 @@ namespace Game
     public class GameState
     {
         public BattleInfo BattleInfo { get; private set; }
+        public readonly InputState InputState = new(); 
 
         public BattleInfo CreateBattle(IEnumerable<UnitData> player, IEnumerable<UnitData> enemy, int locationId, int maxEnemyCount)
         {
