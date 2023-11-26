@@ -8,7 +8,7 @@ namespace Game.Ecs.Components
         public IUnitController Controller { get; private set; }
         public IUnitMoveController MoveController => Controller?.UnitMoveController;
         
-        public void Init(EcsEntity entity, IUnitController view)
+        public void Init(IUnitController view)
         {
             Controller = view;
         }

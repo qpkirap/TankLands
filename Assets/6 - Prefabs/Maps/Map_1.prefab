@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5334b55a8f54476fa7b3251476272327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPoint: {fileID: 0}
+  playerPoint: {fileID: 622466128773898132}
   enemyPoints:
   - {fileID: 3030529828129430392}
   - {fileID: 6865113296874992160}

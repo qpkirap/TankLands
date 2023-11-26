@@ -7,10 +7,10 @@ namespace Game
     {
         [SerializeField] private CinemachineVirtualCamera playerCamera;
         
-        public void SetTarget(Transform target)
+        public void SetTarget(Transform root, Transform lookAt)
         {
-            playerCamera.LookAt = target;
-            playerCamera.Follow = target;
+            playerCamera.LookAt = lookAt;
+            playerCamera.Follow = root;
         }
     }
 }

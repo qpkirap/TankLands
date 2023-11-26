@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Game.Ecs.Components;
+using Game.Ecs.Systems;
 using Leopotam.Ecs;
 
 namespace Game.Ecs
@@ -16,6 +17,13 @@ namespace Game.Ecs
         {
             world = new EcsWorld();
             systems = new EcsSystems(world);
+
+            systems
+                .Add(new SpawnPlayerUnitsSystem())
+                .Add(new SpawnUnitsViewSystem())
+                .Add(new CameraFollowViewSystem());
+            
+            AddOneFrameComponents(systems);
             
             CreateInjects(systems, injections);
             
@@ -33,7 +41,7 @@ namespace Game.Ecs
 
             foreach (var i in filter)
             {
-                filter.GetEntity(i).Get<Destroy>();
+                filter.GetEntity(i).Get<DestroyTag>();
             }
         }
         
@@ -47,6 +55,13 @@ namespace Game.Ecs
             }
 
             systems.ProcessInjects();
+        }
+        
+        private void AddOneFrameComponents(EcsSystems systems)
+        {
+            systems
+                .OneFrame<SpawnPlayerTag>()
+                .OneFrame<SpawnEnemyTag>();
         }
 
         public void Dispose()

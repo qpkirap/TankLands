@@ -39,7 +39,7 @@ namespace Game.Ecs
 
             switch (type)
             {
-                case EntityType.Battle: entity.Get<BattleEntity>(); break;
+                case EntityType.Battle: entity.Get<BattleEntityTag>(); break;
             }
             return entity;
         }

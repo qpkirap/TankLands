@@ -16,14 +16,14 @@ namespace Game.Battle.Controllers
             moveController = GetComponent<IUnitMoveController>();
         }
 
-        public void InjectActivation(EcsEntity entity)
+        public virtual void InjectActivation(EcsEntity entity)
         {
             this.entity = entity;
 
             moveController?.InjectActivation(this.entity);
         }
 
-        public void Disable()
+        public virtual void Disable()
         {
             moveController?.Disable();
         }

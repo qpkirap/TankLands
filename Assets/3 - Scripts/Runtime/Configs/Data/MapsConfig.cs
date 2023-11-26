@@ -18,9 +18,11 @@ namespace Game.Configs
         [field: SerializeField] private int id;
         [field: SerializeField] private List<string> enemys;
         [field: SerializeField] private string player;
-        
-        public int Id => id;
+        [field: SerializeField] private int maxEnemyCount;
+
         public IReadOnlyList<string> Enemys => enemys;
+        public int MaxEnemyCount => maxEnemyCount;
+        public int Id => id;
         public string Player => player;
     }
 }

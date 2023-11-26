@@ -2,7 +2,7 @@
 
 namespace Game.Ecs.Components
 {
-    public struct Destroy : IEcsIgnoreInFilter
+    public struct BattleEntityTag : IEcsIgnoreInFilter
     {
     }
 }

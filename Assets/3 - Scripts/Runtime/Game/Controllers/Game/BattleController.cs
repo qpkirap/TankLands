@@ -6,6 +6,7 @@ using Game.Configs;
 using Game.Configs.Data;
 using Game.Ecs;
 using Game.Ecs.Components;
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Game
@@ -61,7 +62,7 @@ namespace Game
                 var enemyDatas = unitsConfig.UnitDatas.Where(x => item.Enemys.Contains(x.Id));
                 var playerDatas = unitsConfig.UnitDatas.Where(x => item.Player.Equals(x.Id));
                 
-                var battleInfo = gameState.CreateBattle(playerDatas, enemyDatas, locationId, 10);
+                var battleInfo = gameState.CreateBattle(playerDatas, enemyDatas, locationId, item.MaxEnemyCount);
                 
                 var preload = preloaderManager.PreloadBattleUnitsAsync(battleInfo);
                 var map = locationController.CreateMap(locationId);
@@ -70,14 +71,17 @@ namespace Game
                 
                 uiController.SetLoader(false);
 
-                gameController.World.CreateEntity(); //тригерим боевые системы на работу
+                var startBattle = gameController.World.CreateEntity();
+                startBattle.Get<SpawnPlayerTag>();
+                startBattle.Get<SpawnEnemyTag>();
+                startBattle.Get<DestroyTag>();
             }
             else Debug.LogError("Map not found");
         }
 
         public async UniTask EndBattle()
         {
-            gameController.RemoveAllEntities<BattleEntity>();
+            gameController.RemoveAllEntities<BattleEntityTag>();
 
             await UniTask.DelayFrame(5);
         }

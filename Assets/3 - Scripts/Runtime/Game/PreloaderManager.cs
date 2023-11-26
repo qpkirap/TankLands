@@ -18,10 +18,6 @@ namespace Game
         private readonly Dictionary<string, (IUnitController prefab, UnitViewData viewData)> prefabs = new();
 
         public Subject<string> OnUnLoadUnit { get; private set; } = new();
-
-        public PreloaderManager()
-        {
-        }
         
         public void Init(Dictionary<Type, object> injections, Transform root)
         {
