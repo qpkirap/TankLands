@@ -11,14 +11,15 @@ namespace Game
 {
     public class GameController : MonoBehaviour
     {
-        private Dictionary<Type, object> injections;
+        private readonly PreloaderManager preloaderManager = new();
         private GameState gameState = new();
         private GameSystems systems;
-        private readonly PreloaderManager preloaderManager = new();
         private BattleController battleController;
         
         [SerializeField] private List<BaseController> controllers;
         [SerializeField] private ConfigProvider configProvider;
+        
+        private Dictionary<Type, object> injections;
 
         public EcsWorld World => systems.World;
 

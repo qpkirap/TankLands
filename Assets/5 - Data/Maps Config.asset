@@ -23,3 +23,4 @@ MonoBehaviour:
     - f55316179f9fb4447b016071c2a57df0
     - cc7814015655be24a825f7a975ce7c0f
     player: b57b920e18c382140aef305064115a26
+    maxEnemyCount: 10
